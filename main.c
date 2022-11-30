@@ -3,6 +3,7 @@
 
 #include "src/tool.h"
 #include "src/readFile.h"
+#include "src/geom.h"
 
 // 主函数的参数：
 // 1、argc（int）参数的个数
@@ -13,6 +14,14 @@ int main(int argc, char *argv[])
 	hello();
 	int sum = add(1, 8);
 	printf("%d\n", sum);
+	Point point1 = createPoint(10.2, 13.1);
+	Point point2 = createPoint(12.2, 14.1);
+	printf("point x: %f\n", distance(&point1, &point2));
+
+	PointArray pointArray = parsePointsStr("10.2 13.2,24.2 15.4,30.2 13.2,44.2 15.4,50.2 13.2,64.2 15.4,70.2 13.2,84.2 15.4,90.2 13.2,104.2 15.4");
+	int pointSize = pointArray.size;
+	Point *point3 = pointArray.points;
+	printf("point3 x: %f, y:%f\n", point3[pointSize -1].x, point3[pointSize - 1].y);
 
 	printf("param num: %d\n", argc);
 	for(int i = 0; i < argc; i++){
