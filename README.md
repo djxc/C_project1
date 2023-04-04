@@ -6,6 +6,8 @@ src是存放源码的
 build是make生成文件的地方
 CMakeLists.txt中PROJECT是项目名称.当执行到ADD_SUBDIRECTORY( src )时就会解析src下的CMakeList.txt
 工程编译:进入build文件下,运行cmake .. 然后运行make进行编译.
+- 1、如果在src新增文件夹，需要在新增文件夹中添加CMakeLists.txt文件，在父目录中CMakeList.txt添加ADD_SUBDIRECTORY新创建的文件夹
+- 2、在根目录中CMakeLists.txt中TARGET_LINK_LIBRARIES添加新创建的文件。
 
 # 动态连接库
 - 1、创建动态链接库， `gcc hello.c -shared -fPIC -o libhello.so`,-shared表示输出为动态链接库， -fPIC 表示编译为位置独立的代码。

@@ -4,6 +4,7 @@
 #include "src/tool.h"
 #include "src/readFile.h"
 #include "src/geom.h"
+#include "src/study/socket_study.h"
 
 // 主函数的参数：
 // 1、argc（int）参数的个数
@@ -12,6 +13,7 @@
 int main(int argc, char *argv[])
 {
 	hello();
+	test_pipe();
 	int sum = add(1, 8);
 	printf("%d\n", sum);
 	Point point1 = createPoint(10.2, 13.1);

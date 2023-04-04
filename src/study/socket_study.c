@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "hello.h"
 #include <netdb.h>
 #include <arpa/inet.h>
 #include <unistd.h>
@@ -88,7 +87,8 @@ void test_signal() {
 
 #define BUF_SIZE  20
 /**
- * 通过管道实现进程间通信
+ * 通过匿名管道实现进程间通信
+ * 1、匿名管道的使用需要在父子线程之间，共享同一个管道引用
 */
 void test_pipe() {
     int files[2];
@@ -116,19 +116,19 @@ void test_pipe() {
 /**
  * 
 */
-int main(int argc, char * argv[])
-{
-    // getIpFromDomainName();
-    // test_fork();
-    // test_signal();
-    test_pipe();
-    if (argc < 3){
-        printf("Usage: %s base exponent \n", argv[0]);
-        return 1;
-    }
-    double base = atof(argv[1]);
-    int exponent = atoi(argv[2]);
-    double result = dpower(base, exponent);
-    printf("%ld ^ %d is %ld\n", base, exponent, result);
-    return 0;
-} 
+// int main(int argc, char * argv[])
+// {
+//     // getIpFromDomainName();
+//     // test_fork();
+//     // test_signal();
+//     test_pipe();
+//     if (argc < 3){
+//         printf("Usage: %s base exponent \n", argv[0]);
+//         return 1;
+//     }
+//     double base = atof(argv[1]);
+//     int exponent = atoi(argv[2]);
+//     double result = dpower(base, exponent);
+//     printf("%ld ^ %d is %ld\n", base, exponent, result);
+//     return 0;
+// } 
