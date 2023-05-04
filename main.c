@@ -7,6 +7,7 @@
 #include "src/geom.h"
 #include "src/study/socket_study.h"
 #include "src/study/socket_client.h"
+#include "src/study/zlib_test.h"
 
 // 主函数的参数：
 // 1、argc（int）参数的个数
@@ -29,6 +30,8 @@ int main(int argc, char *argv[])
 		// test_thread();
 		// test_unsafe_thread();
 		test_safe_thread();
+	} else if (strcmp(argv[1], "study") == 0) {
+		zlib_version_test();
 	}
 	// hello();
 	// test_select();

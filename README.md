@@ -8,12 +8,13 @@
 
 ## 工程编译
 - 1、进入build文件下,运行cmake .. 然后运行make进行编译.
-- 2、如果在src新增文件夹，需要在新增文件夹中添加CMakeLists.txt文件，在父目录中CMakeList.txt添加ADD_SUBDIRECTORY新创建的文件夹
+- 2、如果在src新增文件夹，需要在新增文件夹中添加CMakeLists.txt文件，在父目录中CMakeList.txt添加ADD_SUBDIRECTORY新创建的文件夹。在CMakeLists.txt中使用SET可以设置变量。
 - 3、在根目录中CMakeLists.txt中TARGET_LINK_LIBRARIES添加新创建的文件。
 
 ## 动态连接库
 - 1、创建动态链接库， `gcc hello.c -shared -fPIC -o libhello.so`,-shared表示输出为动态链接库， -fPIC 表示编译为位置独立的代码。
 - 2、动态链接库的使用，`gcc main.c -L. -lhello -o main`, -L.表示在连接文件在当前目录下，-lhello表示连接的文件，编译器会自动查找libhello.输出为可执行文件。但是可执行文件可能找不到动态链接库，需要将so文件目录放在LD_LIBRARY_PATH环境变量中。
+- 3、修改动态链接库的位置，可以采用在编译命令后添加`-Wl,-rpath=xxx`，在指定位置查找so文件.如果找不到则到默认路径下查找。/lib/x86_64-linux-gnu/.通过ldd 可执行文件可以查看该可执行文件连接的动态链接库位置。
 
 ## 编译器原理学习
 - 1、程序设计语言通过两方面定义：

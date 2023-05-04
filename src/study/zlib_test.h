@@ -1,0 +1,1 @@
+void zlib_version_test();
