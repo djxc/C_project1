@@ -3,6 +3,8 @@
         "dirent.h": "c",
         "logger.h": "c",
         "geos_c.h": "c",
-        "geos_demo.h": "c"
+        "geos_demo.h": "c",
+        "gdal_demo.h": "c",
+        "gdal.h": "c"
     }
 }

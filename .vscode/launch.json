@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/build/${fileBasenameNoExtension}",
-            "args": ["study_geos"],
+            "args": ["study_gdal"],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],

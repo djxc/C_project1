@@ -10,6 +10,7 @@
 #include "src/study/zlib_test.h"
 #include "src/study/dls.h"
 #include "src/study/geos/geos_demo.h"
+#include "src/study/gdal/gdal_demo.h"
 
 // 主函数的参数：
 // 1、argc（int）参数的个数
@@ -36,6 +37,8 @@ int main(int argc, char *argv[])
 		zlib_version_test();
 	} else if (strcmp(argv[1], "study_geos") == 0) {
 		demo_geos();
+	} else if (strcmp(argv[1], "study_gdal") == 0) {
+		test_gdal();
 	} else if (strcmp(argv[1], "study_dls") == 0) {
 		if (argc < 3) {
 			printf("\033[31;1merror\033[0m: plase set directory to ls\n");
