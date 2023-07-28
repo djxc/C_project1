@@ -8,6 +8,8 @@
 #include "src/study/socket_study.h"
 #include "src/study/socket_client.h"
 #include "src/study/zlib_test.h"
+#include "src/study/dls.h"
+#include "src/study/geos/geos_demo.h"
 
 // 主函数的参数：
 // 1、argc（int）参数的个数
@@ -30,8 +32,16 @@ int main(int argc, char *argv[])
 		// test_thread();
 		// test_unsafe_thread();
 		test_safe_thread();
-	} else if (strcmp(argv[1], "study") == 0) {
+	} else if (strcmp(argv[1], "study_zlib") == 0) {
 		zlib_version_test();
+	} else if (strcmp(argv[1], "study_geos") == 0) {
+		demo_geos();
+	} else if (strcmp(argv[1], "study_dls") == 0) {
+		if (argc < 3) {
+			printf("\033[31;1merror\033[0m: plase set directory to ls\n");
+			exit(0);
+		}
+		ls(argv[2]);
 	}
 	// hello();
 	// test_select();

@@ -6,5 +6,5 @@ SET(CMAKE_C_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g")
 ADD_SUBDIRECTORY(src)
 AUX_SOURCE_DIRECTORY(. DIR_SRCS)
 ADD_EXECUTABLE(main ${DIR_SRCS})
+TARGET_LINK_LIBRARIES(main tool readFile geom socket_server socket_client geos_demo -lm -lz -lgeos_c -Wl,-rpath=/usr/local/lib)
 
-TARGET_LINK_LIBRARIES(main tool readFile geom socket_server socket_client -lm -lz -Wl,-rpath=/usr/local/lib)
